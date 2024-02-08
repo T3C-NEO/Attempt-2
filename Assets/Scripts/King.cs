@@ -49,4 +49,12 @@ public class King : MonoBehaviour
             transform.position = new Vector3(transform.position.x+1,1,transform.position.z-1);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Finish" || other.gameObject.tag == "Respawn")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
