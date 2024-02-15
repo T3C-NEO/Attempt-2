@@ -15,7 +15,7 @@ public class King : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.RightShift))
         {
             Goofy();
         } else
@@ -52,7 +52,7 @@ public class King : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Finish" || other.gameObject.tag == "Respawn")
+        if (other.gameObject.tag == "Finish" || (other.gameObject.tag == "Respawn" && transform.position.y < other.transform.position.y))
         {
             Destroy(gameObject);
         }
