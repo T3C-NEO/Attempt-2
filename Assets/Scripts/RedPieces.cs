@@ -6,10 +6,12 @@ public class RedPieces : MonoBehaviour
 {
 
     float h;
-    // Start is called before the first frame update
+
+    public reset sn;
+
     void Start()
     {
-        
+        reset sn = gameObject.GetComponent<reset>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class RedPieces : MonoBehaviour
     {
         if (other.gameObject.tag == "Finish" || (other.gameObject.tag == "Finish2" && transform.position.y < other.transform.position.y))
         {
+            sn.mus = true;
             Destroy(gameObject);
         }
     }

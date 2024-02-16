@@ -6,6 +6,8 @@ public class King : MonoBehaviour
 {
 
     float h;
+    
+    public reset sn;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,7 @@ public class King : MonoBehaviour
     {
         if (other.gameObject.tag == "Finish" || (other.gameObject.tag == "Respawn" && transform.position.y < other.transform.position.y))
         {
+            sn.mus = true;
             Destroy(gameObject);
         }
     }
