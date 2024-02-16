@@ -11,7 +11,6 @@ public class RedPieces : MonoBehaviour
 
     void Start()
     {
-        reset sn = gameObject.GetComponent<reset>();
     }
 
     // Update is called once per frame
